@@ -1,9 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
-import { PrismaClient, User, Video, View } from '@prisma/client';
-import { count } from 'console';
-import { resolve } from 'path';
+import { PrismaClient, Video } from '@prisma/client';
 const prisma = new PrismaClient();
 
+// Function to count views per video.
 const getVideoViewsCount = async (videos: Video[]) => {
 	try {
 		for (const video of videos) {
@@ -23,13 +22,14 @@ const getVideoViewsCount = async (videos: Video[]) => {
 	}
 };
 
+// Controller to get all recommended videos for a user.
 export const getRecommendedVideos = async (
 	req: Request,
 	res: Response,
 	next: NextFunction
 ) => {
 	try {
-		let videos = await prisma.video.findMany({
+		const videos = await prisma.video.findMany({
 			include: {
 				user: {
 					select: {
@@ -45,8 +45,42 @@ export const getRecommendedVideos = async (
 			return res.json(videos);
 		}
 
-		const aa = await getVideoViewsCount(videos);
-		res.json(aa);
+		const vidoesWithCounts = await getVideoViewsCount(videos);
+		res.json(vidoesWithCounts);
+	} catch (error) {
+		next(error);
+	}
+};
+
+// Controller to get all trending videos
+export const getTrendingVideos = async (
+	req: Request,
+	res: Response,
+	next: NextFunction
+) => {
+	try {
+		const videos = await prisma.video.findMany({
+			include: {
+				user: {
+					select: {
+						username: true,
+					},
+				},
+			},
+			orderBy: {
+				createdAt: 'desc',
+			},
+		});
+
+		if (!videos.length) {
+			return res.json(videos);
+		}
+
+		const videosWithCounts = await getVideoViewsCount(videos);
+		if (videosWithCounts) {
+			videosWithCounts.sort((a, b) => b.numOfViews - a.numOfViews);
+		}
+		res.json(videosWithCounts);
 	} catch (error) {
 		next(error);
 	}
