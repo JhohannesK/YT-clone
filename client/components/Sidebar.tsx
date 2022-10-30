@@ -8,28 +8,24 @@ import IconAndName from './_Sidebar';
 
 const Sidebar = () => {
 	return (
-		<div className='md:pt-16 absolute bottom-0 md:top-0 flex items-center md:items-start justify-between md:justify-start md:flex-col w-full gap-y-2 bg-gray-800 md:pr-2 md:w-[17rem] md:h-screen overflow-y-auto'>
+		<div className='md:pt-16 absolute bottom-0 md:top-0 flex items-center md:items-start justify-between md:flex-col w-full md:w-max gap-y-2 bg-gray-800 lg:pr-2 lg:w-[17rem] md:h-screen overflow-y-auto'>
 			<IconAndName icon={<IoHome />} title='Home' />
 			<IconAndName icon={<GiVideoCamera />} title='Shorts' />
 			<IconAndName icon={<RiVideoChatFill />} title='Subscriptions' />
-			<hr className='hidden md:inline-block' />
 			<IconAndName icon={<IoLibrary />} title='Library' />
-			<div className='hidden md:inline-flex'>
-				<IconAndName icon={<RiHistoryFill />} title='History' />
-			</div>
-			<div className='hidden md:inline-flex'>
+			<IconAndName icon={<RiHistoryFill />} title='History' />
+			<div className='hidden md:inline-flex w-full'>
 				<IconAndName icon={<RiVideoFill />} title='Your Vidoes' />
 			</div>
-			<div className='hidden md:inline-flex'>
+			<div className='hidden md:inline-flex w-full'>
 				<IconAndName icon={<BsClock />} title='Watch Later' />
 			</div>
-			<div className='hidden md:inline-flex'>
+			<div className='hidden md:inline-flex w-full'>
 				<IconAndName icon={<GiThumbUp />} title='Liked Videos' />
 			</div>
-			<div className='hidden md:inline-flex'>
+			<div className='hidden md:inline-flex w-full'>
 				<IconAndName icon={<IoIosArrowDown />} title='Show More' />
 			</div>
-			<hr className='hidden md:inline-block' />
 			<div className='hidden md:inline-flex'>
 				<p className='uppercase'>Subscriptions</p>
 			</div>
