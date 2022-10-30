@@ -9,7 +9,7 @@ import IconAndName from './_Sidebar';
 const Sidebar = () => {
 	const [user, setUser] = React.useState<string[]>([]);
 	return (
-		<div className='pt-16 pl-3 absolute top-0 flex flex-col gap-y-4 bg-gray-800 pr-2 w-[17rem] h-screen overflow-y-auto'>
+		<div className='pt-16 absolute top-0 flex flex-col gap-y-2 bg-gray-800 pr-2 w-[17rem] h-screen overflow-y-auto'>
 			<IconAndName icon={<IoHome />} title='Home' />
 			<IconAndName icon={<GiVideoCamera />} title='Shorts' />
 			<IconAndName icon={<RiVideoChatFill />} title='Subscriptions' />

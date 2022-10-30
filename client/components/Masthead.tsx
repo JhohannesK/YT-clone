@@ -8,16 +8,16 @@ import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 const Masthead: NextPage = () => {
 	return (
 		<main className='border-b-2 border-red-500 bg-gray-800 px-3 fixed z-20 w-full h-[56px] flex items-center justify-between'>
-			<div className='flex items-center justify-center gap-x-3'>
+			<div className='flex items-center justify-center gap-x-5'>
 				{/* Menu icon */}
 				<div className='hidden sm:inline-flex cursor-pointer'>
-					<GiHamburgerMenu />
+					<GiHamburgerMenu className='text-2xl' />
 				</div>
 				{/* logo */}
-				<div className='flex items-center justify-center gap-x-2'>
-					<BsYoutube className='text-red-500' />
+				<div className='flex items-center justify-center gap-x-2 cursor-pointer'>
+					<BsYoutube className='text-red-500 text-2xl' />
 					<p className='font-bold text-[10px] sm:text-sm'>
-						YOUTUBE <sup>GH</sup>
+						YOUTUBE <sup className='font-light'>GH</sup>
 					</p>
 				</div>
 			</div>
@@ -37,9 +37,9 @@ const Masthead: NextPage = () => {
 					<BsSearch />
 				</div>
 			</div>
-			<div className='flex items-center justify-center space-x-2 sm:ml-3'>
-				<RiVideoAddFill className='hidden sm:inline-flex' />
-				<IoNotificationsOutline className='hidden sm:inline-flex' />
+			<div className='flex items-center justify-center space-x-5 sm:ml-3'>
+				<RiVideoAddFill className='hidden sm:inline-flex text-2xl' />
+				<IoNotificationsOutline className='hidden sm:inline-flex text-2xl' />
 				<div className='h-8 w-8 rounded-full bg-red-400'></div>
 			</div>
 		</main>
