@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { BsSearch, BsYoutube } from 'react-icons/bs';
 import { RiVideoAddFill } from 'react-icons/ri';
 import { IoNotificationsOutline } from 'react-icons/io5';
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import { NextPage } from 'next';
 
 const Masthead: NextPage = () => {
 	return (
