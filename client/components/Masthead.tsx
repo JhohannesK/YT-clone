@@ -10,7 +10,7 @@ const Masthead: NextPage = () => {
 		<main className='border-b-2 border-red-500 bg-gray-800 px-3 fixed z-20 w-full h-[56px] flex items-center justify-between'>
 			<div className='flex items-center justify-center gap-x-5'>
 				{/* Menu icon */}
-				<div className='hidden sm:inline-flex cursor-pointer'>
+				<div className='hidden sm:inline-flex cursor-pointer hover:rotate-180 transition-all duration-500'>
 					<GiHamburgerMenu className='text-2xl' />
 				</div>
 				{/* logo */}
@@ -29,11 +29,11 @@ const Masthead: NextPage = () => {
 						<input
 							type='text'
 							placeholder='Search'
-							className='p-2 flex-1 basis-[1e-9px] max-w-full w-full bg-gray-100 focus:outline-none text-black'
+							className='p-2 pl-5 flex-1 rounded-l-2xl basis-[1e-9px] max-w-full w-full bg-gray-100 focus:outline-none text-black'
 						/>
 					</div>
 				</div>
-				<div className='px-7 py-2 sm:bg-gray-500 h-[40px] flex items-center justify-center '>
+				<div className='px-7 py-2 sm:bg-gray-500 rounded-r-2xl h-[40px] flex items-center justify-center '>
 					<BsSearch />
 				</div>
 			</div>
