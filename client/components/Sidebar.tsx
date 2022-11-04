@@ -8,7 +8,7 @@ import IconAndName from './_Sidebar';
 
 const Sidebar = () => {
 	return (
-		<div className='md:pt-16 absolute bottom-0 md:top-0 flex items-center md:items-start justify-between md:flex-col w-full md:w-max gap-y-2 bg-gray-800 lg:pr-2 lg:w-[15rem] md:h-screen overflow-y-auto'>
+		<div className='md:pt-16 px-5 rounded-t-md absolute bottom-0 md:top-0 flex items-center md:items-start justify-between md:flex-col w-full md:w-max gap-y-2 bg-gray-800 lg:pr-2 lg:w-[15rem] md:h-screen overflow-y-auto'>
 			<IconAndName icon={<IoHome />} title='Home' />
 			<IconAndName icon={<GiVideoCamera />} title='Shorts' />
 			<IconAndName icon={<RiVideoChatFill />} title='Subscriptions' />
@@ -26,7 +26,7 @@ const Sidebar = () => {
 			<div className='hidden md:inline-flex w-full'>
 				<IconAndName icon={<IoIosArrowDown />} title='Show More' />
 			</div>
-			<div className='hidden md:inline-flex'>
+			<div className='hidden lg:inline-flex'>
 				<p className='uppercase'>Subscriptions</p>
 			</div>
 		</div>
