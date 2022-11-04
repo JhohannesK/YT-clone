@@ -8,11 +8,14 @@ import IconAndName from './_Sidebar';
 
 const Sidebar = () => {
 	return (
-		<div className='md:pt-16 px-5 rounded-t-md absolute bottom-0 md:top-0 flex items-center md:items-start justify-between md:flex-col w-full md:w-max gap-y-2 bg-gray-800 lg:pr-2 lg:w-[15rem] md:h-screen overflow-y-auto'>
+		<div className='md:pt-16 px-5 rounded-t-md fixed bottom-0 md:top-0 flex items-center md:items-start justify-between md:flex-col w-full md:w-max gap-y-2 bg-gray-800 lg:pr-2 lg:w-[15rem] md:h-screen overflow-y-auto'>
 			<IconAndName icon={<IoHome />} title='Home' />
-			<IconAndName icon={<GiVideoCamera />} title='Shorts' />
+			<div className='hidden md:inline-flex w-full'>
+				<IconAndName icon={<GiVideoCamera />} title='Shorts' />
+			</div>
 			<IconAndName icon={<RiVideoChatFill />} title='Subscriptions' />
 			<IconAndName icon={<IoLibrary />} title='Library' />
+			<div className='hidden md:inline-flex border-b pt-5 w-full h-1'></div>
 			<IconAndName icon={<RiHistoryFill />} title='History' />
 			<div className='hidden md:inline-flex w-full'>
 				<IconAndName icon={<RiVideoFill />} title='Your Vidoes' />
@@ -29,6 +32,7 @@ const Sidebar = () => {
 			<div className='hidden lg:inline-flex'>
 				<p className='uppercase'>Subscriptions</p>
 			</div>
+			<div className='hidden md:inline-flex border-b pt-5 w-full h-1'></div>
 		</div>
 	);
 };

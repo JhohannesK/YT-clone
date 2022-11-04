@@ -7,7 +7,7 @@ import { NextPage } from 'next';
 
 const Masthead: NextPage = () => {
 	return (
-		<main className='border-b-2 border-red-500 bg-gray-800 px-3 fixed z-20 w-full h-[56px] flex items-center justify-between'>
+		<main className='border-b-2 border-red-500 bg-gray-800 px-8 fixed z-20 w-full h-[56px] flex items-center justify-between'>
 			<div className='flex items-center justify-center gap-x-5'>
 				{/* Menu icon */}
 				<div className='hidden sm:inline-flex cursor-pointer hover:rotate-180 transition-all duration-500'>
@@ -23,7 +23,7 @@ const Masthead: NextPage = () => {
 			</div>
 
 			{/* Search box and mic */}
-			<div className='flex flex-1 min-w-0 items-center justify-end sm:justify-center h-full md:mx-36'>
+			<div className='flex flex-1 min-w-0 items-center justify-end sm:justify-center h-full lg:mx-36'>
 				<div className='hidden relative sm:flex items-center justify-center flex-1 basis-[1e-9px] ml-2 sm:ml-10'>
 					<div className='w-full'>
 						<input
