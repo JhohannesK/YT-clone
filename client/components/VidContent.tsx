@@ -4,7 +4,7 @@ import VidContainer from './VidContainer';
 
 const VidContent = () => {
 	return (
-		<div className='md:ml-[16rem] pt-[4rem]'>
+		<div className='relative flex flex-col items-center md:ml-20 lg:ml-[16rem] pt-[4rem]'>
 			<Feedfilter />
 			<VidContainer />
 		</div>
