@@ -5,7 +5,7 @@ import getUserRoutes from './routes/user.routes';
 
 const app = express();
 app.use(express.json());
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 app.get('/', async (req, res) => {
 	res.send('This is the Youtube clone');
