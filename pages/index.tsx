@@ -1,4 +1,8 @@
-import type { NextPage } from 'next';
+import type {
+	GetServerSideProps,
+	GetServerSidePropsContext,
+	NextPage,
+} from 'next';
 import { signIn, useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -6,6 +10,7 @@ import { BsGithub } from 'react-icons/bs';
 import Masthead from '../components/Masthead';
 import Sidebar from '../components/Sidebar';
 import VidContent from '../components/VidContent';
+import { getServerAuthSession } from '../server/common/getServerAuthSession';
 
 const Home: NextPage = () => {
 	const { data: session, status } = useSession();
@@ -34,6 +39,25 @@ const Home: NextPage = () => {
 			</button>
 		</>
 	);
+};
+
+export const getServerSideProps: GetServerSideProps = async (
+	ctx: GetServerSidePropsContext
+) => {
+	const session = await getServerAuthSession(ctx);
+	console.log('🚀 ~ file: index.tsx:48 ~ session', session);
+
+	if (!session) {
+		return {
+			redirect: {
+				destination: '/Login',
+				permanent: false,
+			},
+		};
+	}
+	return {
+		props: { session },
+	};
 };
 
 export default Home;
